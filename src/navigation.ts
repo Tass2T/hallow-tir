@@ -1,9 +1,10 @@
 import { Game } from '@/states/Game.ts'
-import { Container } from 'pixi.js'
+import { Container, Ticker } from 'pixi.js'
 import { app } from './main'
 
 export interface StateScreen extends Container {
     resize?: () => void
+    update?: (ticker: Ticker) => void
 }
 
 type State = 'game' | 'menu'
