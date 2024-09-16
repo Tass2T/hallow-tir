@@ -1,5 +1,6 @@
 import { Application } from 'pixi.js'
 import { gameConfig } from '@/utils/gameConfig'
+import { navigation } from './navigation'
 
 export const app = new Application()
 
@@ -21,6 +22,7 @@ const resize = () => {
 
     window.scrollTo(0, 0)
     app.renderer.resize(width, height)
+    navigation.resize()
 }
 
 await app.init({
@@ -33,3 +35,5 @@ document.body.appendChild(app.canvas)
 window.addEventListener('resize', resize)
 
 resize()
+
+navigation.showScreen('game')
